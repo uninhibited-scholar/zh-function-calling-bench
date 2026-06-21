@@ -1,13 +1,13 @@
 {
-  "n_scored": 18,
+  "n_scored": 34,
   "missing_predictions": 0,
-  "name_accuracy": 0.778,
-  "full_call_accuracy": 0.167,
-  "false_call_rate_on_irrelevance": 0.25,
-  "miss_rate_on_actionable": 0.214,
+  "name_accuracy": 0.676,
+  "full_call_accuracy": 0.176,
+  "false_call_rate_on_irrelevance": 0.143,
+  "miss_rate_on_actionable": 0.37,
   "by_category_full_accuracy": {
     "arg_hard": 0.0,
-    "irrelevance": 0.75,
+    "irrelevance": 0.857,
     "multi_turn": 0.0,
     "parallel": 0.0,
     "single": 0.0

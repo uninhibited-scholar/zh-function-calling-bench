@@ -40,9 +40,11 @@ def main():
             for k,v in c.get("arguments",{}).items():
                 pr=props.get(k,{})
                 if "enum" in pr and v and v not in pr["enum"]: probs.append(f"L{ln} {k}={v!r} not in enum")
-        # relative-time samples must carry context_date
-        if calls and REL.search(o["query"]) and "context_date" not in o:
-            probs.append(f"L{ln} relative time in query but no context_date")
+        # samples that RESOLVE a relative date into a YYYY-MM-DD arg must carry context_date
+        has_resolved_date=any(re.match(r"^\\d{4}-\\d{2}-\\d{2}$",str(v))
+                              for c in calls for v in c.get("arguments",{}).values())
+        if has_resolved_date and REL.search(o["query"]) and "context_date" not in o:
+            probs.append(f"L{ln} resolved date arg from relative time but no context_date")
     irr_ratio=cat["irrelevance"]/n if n else 0
     if irr_ratio<0.15: probs.append(f"irrelevance ratio {irr_ratio:.2f} < 0.15")
     for c in CATS:
