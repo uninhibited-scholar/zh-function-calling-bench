@@ -1,0 +1,18 @@
+{"id": "fc-001", "calls": [{"name": "search_train", "arguments": {}}]}
+{"id": "fc-002", "calls": [{"name": "query_express", "arguments": {}}]}
+{"id": "fc-003", "calls": [{"name": "get_weather", "arguments": {}}]}
+{"id": "fc-004", "calls": [{"name": "currency_convert", "arguments": {}}]}
+{"id": "fc-005", "calls": [{"name": "send_message", "arguments": {}}]}
+{"id": "fc-006", "calls": [{"name": "get_weather", "arguments": {}}, {"name": "book_hotel", "arguments": {}}]}
+{"id": "fc-007", "calls": [{"name": "search_train", "arguments": {}}, {"name": "set_alarm", "arguments": {}}]}
+{"id": "fc-008", "calls": []}
+{"id": "fc-009", "calls": []}
+{"id": "fc-010", "calls": [{"name": "search_train", "arguments": {}}]}
+{"id": "fc-011", "calls": []}
+{"id": "fc-012", "calls": []}
+{"id": "fc-013", "calls": []}
+{"id": "fc-014", "calls": [{"name": "book_hotel", "arguments": {}}]}
+{"id": "fc-015", "calls": []}
+{"id": "fc-016", "calls": [{"name": "currency_convert", "arguments": {}}]}
+{"id": "fc-017", "calls": [{"name": "set_alarm", "arguments": {}}]}
+{"id": "fc-018", "calls": [{"name": "search_train", "arguments": {}}]}
