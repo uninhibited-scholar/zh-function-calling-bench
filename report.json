@@ -1,7 +1,7 @@
 {
-  "n": 52,
+  "n": 76,
   "missing_predictions": 0,
-  "function_name_accuracy": 0.635,
+  "function_name_accuracy": 0.645,
   "full_call_accuracy": 0.0,
   "irrelevance_accuracy": 0.0
 }
