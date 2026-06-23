@@ -41,9 +41,9 @@ python3 scripts/score.py your_predictions.jsonl
 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)。
 
 
-## 数据与基线（v0.2）
+## 数据与基线（v0.3）
 
-- `data/bench.jsonl`：**v0.2 种子集 28 条**（单人编写、本土化场景、可复现；目标扩至 300+）。五类配比 single 11 / parallel 5 / multi_turn 2 / arg_hard 5 / **irrelevance 5（17.9%）**。
+- `data/bench.jsonl`：**v0.3 种子集 52 条**（单人编写、本土化场景、可复现；目标扩至 300+）。五类配比 single 19 / parallel 9 / multi_turn 5 / arg_hard 9 / **irrelevance 10（19.2%）**。
 - 字段：`id, category, difficulty, context_date, query, tools, gold, rationale, tags`。
 
 **朴素基线**（`baselines/keyword_router.py`，总调首个工具、空参）跑全集：
@@ -54,7 +54,7 @@ python3 scripts/score.py your_predictions.jsonl
 
 **看点**：朴素基线**完整调用准确率 0.0、irrelevance 0.0**——蒙对函数名没用，参数填不对、该不调的也乱调。**这正是"函数名对 ≠ 会调用、必须评参数与 irrelevance"的理由。**
 
-> 诚实定位：v0.2、28 条、单人编写、朴素基线——能跑通、有论点、可复现的早期基准；尚非大规模权威基准。
+> 诚实定位：v0.3、52 条、单人编写、朴素基线——能跑通、有论点、可复现的早期基准；尚非大规模权威基准。
 
 相关作品：[agent-safety-bench-zh](https://github.com/uninhibited-scholar/agent-safety-bench-zh) · [attack-bench-zh](https://github.com/uninhibited-scholar/attack-bench-zh) · [defensive-refusal-bench-zh](https://github.com/uninhibited-scholar/defensive-refusal-bench-zh) · [cybersec-qa-dataset-zh](https://github.com/uninhibited-scholar/cybersec-qa-dataset-zh)
 
