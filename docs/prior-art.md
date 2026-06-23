@@ -1,3 +1,11 @@
-# Prior art (M1 必填)
-检索 BFCL(v3)、ToolLLM、ACEBench、Nexus、ZHTW function-calling leaderboard、ToolRM 等，
-列语言/任务/评分法/是否简体原生/差异。确认"简体原生 + 本土化场景"是真缝。
+# Prior art
+
+| 项目 | 语言 | 任务 | 简体原生 | 与本项目差异 |
+|---|---|---|:--:|---|
+| BFCL (v3) | 英文 | 函数调用(单/并行/多轮/irrelevance) | 否 | 标杆，但英文；本项目简体原生 + 本土化场景 |
+| ToolLLM / ACEBench | 英文 | 工具使用 | 否 | 英文；API 偏国际服务 |
+| ZHTW function-calling leaderboard | 繁体中文 | BFCL 翻译评测 | 否(繁中/翻译) | 本项目**简体、原生编写**，非翻译 |
+| ToolRM | 英文 | 工具使用奖励建模 | 否 | 训练奖励向，非评测集 |
+
+**差异化定位**：简体中文 + 原生编写 + 本土化场景（12306/外卖/快递/记账等）+ AST 式结构化机器评分。
+> 注：v0.2 初步调研，M1 需补全 2026 最新同类并逐条核实。
