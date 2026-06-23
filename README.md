@@ -56,6 +56,20 @@ python3 scripts/score.py your_predictions.jsonl
 
 > 诚实定位：v0.4、76 条、单人编写、朴素基线——能跑通、有论点、可复现的早期基准；尚非大规模权威基准。
 
+
+## 跑真实模型基线（排行榜）
+
+```bash
+export OPENAI_API_KEY=sk-...           # 任意 OpenAI 兼容端点
+python3 scripts/run_model.py --model <模型名> [--base-url <端点>]
+python3 scripts/score.py predictions_<模型名>.jsonl
+```
+
+| 模型 | function_name_acc | full_call_acc | irrelevance_acc | 备注 |
+|---|---:|---:|---:|---|
+| naive baseline | 0.645 | 0.0 | 0.0 | 总调首个工具，作下限 |
+| _待填_ | | | | |
+
 相关作品：[agent-safety-bench-zh](https://github.com/uninhibited-scholar/agent-safety-bench-zh) · [attack-bench-zh](https://github.com/uninhibited-scholar/attack-bench-zh) · [defensive-refusal-bench-zh](https://github.com/uninhibited-scholar/defensive-refusal-bench-zh) · [cybersec-qa-dataset-zh](https://github.com/uninhibited-scholar/cybersec-qa-dataset-zh)
 
 ---
