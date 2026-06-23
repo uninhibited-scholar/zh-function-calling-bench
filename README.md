@@ -41,3 +41,17 @@ python3 scripts/score.py your_predictions.jsonl
 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)。
 
 相关作品：[agent-safety-bench-zh](https://github.com/uninhibited-scholar/agent-safety-bench-zh) · [attack-bench-zh](https://github.com/uninhibited-scholar/attack-bench-zh) · [defensive-refusal-bench-zh](https://github.com/uninhibited-scholar/defensive-refusal-bench-zh) · [cybersec-qa-dataset-zh](https://github.com/uninhibited-scholar/cybersec-qa-dataset-zh)
+
+---
+
+## 🤝 执行 agent 交接清单（干到全勾即 v0 完成）
+
+- [ ] **M1** `docs/prior-art.md` 填完（对比 BFCL/ToolLLM/ACEBench/ZHTW，确认"简体原生"是真缝）
+- [ ] **M2** `scripts/normalize.py` 补全中文数字/相对日期/枚举同义词解析
+- [ ] `data/bench.jsonl` ≥ 300 条，其中 `irrelevance` ≥ 15%，`python3 scripts/check_bench.py` 全绿
+- [ ] `python3 scripts/score.py <pred>` 产出完整 `report.json`（含 irrelevance 准确率）
+- [ ] 关键词基线结果写入 README（≥4 个指标，含 irrelevance）
+- [ ] CI 绿；README 增 `load_dataset` + 诚实来源说明 + 归一化口径
+- [ ] 红线：工具与场景**原生中文编写，不得翻译 BFCL 样本**；拿不准的记入 `docs/open-questions.md`
+
+> `irrelevance`（不该调用）类是区分"真能力"与"逢问必调刷分"的关键，务必占够比例。
