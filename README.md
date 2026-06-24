@@ -24,7 +24,7 @@ python3 scripts/score.py your_predictions.jsonl
 朴素「关键词→函数」路由（`baselines/keyword_router.py`，总调首个工具、不抽参数）跑全集 76 条：
 
 ```json
-{ "function_name_accuracy": 0.645, "full_call_accuracy": 0.0, "irrelevance_accuracy": 0.0 }
+{ "function_name_accuracy": 0.641, "full_call_accuracy": 0.0, "irrelevance_accuracy": 0.0 }
 ```
 
 **看点**：朴素基线能蒙对约六成函数名，但**完整调用 0.0、irrelevance 0.0**——参数全填不对、该不调的也乱调。**选对工具 ≠ 会用工具**；真正难的是参数抽取与"该不该调"的判断，这正是本基准要测的。
@@ -38,7 +38,7 @@ python3 scripts/score.py predictions_<模型名>.jsonl
 
 | 模型 | function_name_acc | full_call_acc | irrelevance_acc | 备注 |
 |---|---:|---:|---:|---|
-| naive baseline | 0.645 | 0.0 | 0.0 | 总调首个工具，作下限 |
+| naive baseline | 0.641 | 0.0 | 0.0 | 总调首个工具，作下限 |
 | _待填_ | | | | |
 
 ## 质量保证
