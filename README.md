@@ -7,10 +7,10 @@
 
 评测 LLM 在**简体中文**语境下能否输出正确的**函数名 + 参数**。现有 function-calling 基准（BFCL / ToolLLM / ACEBench）为英文，中文仅有**繁中(ZHTW)翻译版**——本项目做**简体、原生编写、本土化场景**（车票/外卖/快递/日历等），非翻译。评分为 AST 式结构化匹配，零主观、CI 可担保。
 
-> 现状诚实定位：**v0.4 种子集 76 条、单人编写、关键词基线**——能跑通、有论点、可复现的早期基准；规模化见 [PLAN.md](PLAN.md)。
+> 现状诚实定位：**v0.4 种子集 103 条、单人编写、关键词基线**——能跑通、有论点、可复现的早期基准；规模化见 [PLAN.md](PLAN.md)。
 
 ## 数据
-- `data/bench.jsonl`，共 **76 条**（目标 300+）。五类配比 `single 28 / parallel 13 / multi_turn 8 / arg_hard 13 / irrelevance 14`（**irrelevance 18.4% ≥15%**，防"逢问必调"刷分）。
+- `data/bench.jsonl`，共 **103 条**（目标 300+）。五类配比 `single 36 / parallel 17 / multi_turn 11 / arg_hard 19 / irrelevance 20`（**irrelevance 19.4% ≥15%**，防"逢问必调"刷分）。
 - 字段：`id, category, difficulty, query, tools, gold, rationale, tags`（多轮含 `history`，相对日期含 `context_date`）。详见 [docs/taxonomy.md](docs/taxonomy.md) / [docs/normalization.md](docs/normalization.md)。
 
 ## 评测方法
