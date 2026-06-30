@@ -7,10 +7,10 @@
 
 评测 LLM 在**简体中文**语境下能否输出正确的**函数名 + 参数**。现有 function-calling 基准（BFCL / ToolLLM / ACEBench）为英文，中文仅有**繁中(ZHTW)翻译版**——本项目做**简体、原生编写、本土化场景**（车票/外卖/快递/日历等），非翻译。评分为 AST 式结构化匹配，零主观、CI 可担保。
 
-> 现状诚实定位：**v0.4 种子集 103 条、单人编写、关键词基线**——能跑通、有论点、可复现的早期基准；规模化见 [PLAN.md](PLAN.md)。
+> 现状诚实定位：**v1.0 共 300 条、单人编写、关键词基线**——能跑通、有论点、可复现的基准（达 PLAN 验收规模）；多模型基线见 [PLAN.md](PLAN.md)。
 
 ## 数据
-- `data/bench.jsonl`，共 **103 条**（目标 300+）。五类配比 `single 36 / parallel 17 / multi_turn 11 / arg_hard 19 / irrelevance 20`（**irrelevance 19.4% ≥15%**，防"逢问必调"刷分）。
+- `data/bench.jsonl`，共 **300 条**（达 PLAN 验收线）。五类配比 `single 100 / parallel 40 / multi_turn 46 / arg_hard 49 / irrelevance 65`（**irrelevance 21.7% ≥15%**，防"逢问必调"刷分）；难度 easy 60 / medium 148 / hard 92（hard ~31%）。
 - 字段：`id, category, difficulty, query, tools, gold, rationale, tags`（多轮含 `history`，相对日期含 `context_date`）。详见 [docs/taxonomy.md](docs/taxonomy.md) / [docs/normalization.md](docs/normalization.md)。
 
 ## 评测方法
@@ -21,13 +21,13 @@ python3 scripts/score.py your_predictions.jsonl
 指标：函数名准确率、**完整调用准确率**（name+required 参数，经归一化）、irrelevance 准确率、各类别分项。
 
 ## 关键词基线（自带论点）
-朴素「关键词→函数」路由（`baselines/keyword_router.py`，总调首个工具、不抽参数）跑全集 76 条：
+朴素「关键词→函数」路由（`baselines/keyword_router.py`，总调首个工具、不抽参数）跑全集 300 条：
 
 ```json
-{ "function_name_accuracy": 0.641, "full_call_accuracy": 0.0, "irrelevance_accuracy": 0.0 }
+{ "function_name_accuracy": 0.65, "full_call_accuracy": 0.0, "irrelevance_accuracy": 0.0 }
 ```
 
-**看点**：朴素基线能蒙对约六成函数名，但**完整调用 0.0、irrelevance 0.0**——参数全填不对、该不调的也乱调。**选对工具 ≠ 会用工具**；真正难的是参数抽取与"该不该调"的判断，这正是本基准要测的。
+**看点**：朴素基线能蒙对约六成五函数名，但**完整调用 0.0、irrelevance 0.0**——参数全填不对、该不调的也乱调。**选对工具 ≠ 会用工具**；真正难的是参数抽取与"该不该调"的判断，这正是本基准要测的。
 
 ## 跑真实模型（排行榜）
 ```bash
@@ -38,7 +38,7 @@ python3 scripts/score.py predictions_<模型名>.jsonl
 
 | 模型 | function_name_acc | full_call_acc | irrelevance_acc | 备注 |
 |---|---:|---:|---:|---|
-| naive baseline | 0.641 | 0.0 | 0.0 | 总调首个工具，作下限 |
+| naive baseline | 0.65 | 0.0 | 0.0 | 总调首个工具，作下限 |
 | _待填_ | | | | |
 
 ## 质量保证
