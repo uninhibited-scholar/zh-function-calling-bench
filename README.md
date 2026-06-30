@@ -39,7 +39,8 @@ python3 scripts/score.py predictions_<模型名>.jsonl
 | 模型 | function_name_acc | full_call_acc | irrelevance_acc | 备注 |
 |---|---:|---:|---:|---|
 | naive baseline | 0.65 | 0.0 | 0.0 | 总调首个工具，作下限 |
-| _待填_ | | | | |
+| doubao-1.5-pro-32k | 0.50 | 0.41 | 0.985 | 火山引擎，2025-01 |
+| _更多模型待填_ | | | | |
 
 ## 质量保证
 `scripts/check_bench.py` + CI 每次提交校验：schema 严格、gold 调用的函数与参数必须在 `tools` 中声明、required 齐全、enum 合法、`irrelevance` gold 为空、相对时间样本须带 `context_date`、`irrelevance` 占比 ≥15%、五类非空。**禁止靠删难例或放宽 gold 骗过校验。**
