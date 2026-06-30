@@ -21,3 +21,13 @@
 {"id": "fc-0021", "calls": []}
 {"id": "fc-0022", "calls": []}
 {"id": "fc-0023", "calls": []}
+{"id": "fc-0024", "calls": [{"name": "create_reminder", "arguments": {"datetime": "2026-06-22 20:00", "title": "给妈妈打电话"}}]}
+{"id": "fc-0025", "calls": [{"name": "get_stock", "arguments": {"code": "00700"}}]}
+{"id": "fc-0026", "calls": [{"name": "calculator", "arguments": {"expression": "15 + 27"}}, {"name": "get_weather", "arguments": {"city": "深圳"}}]}
+{"id": "fc-0027", "calls": [{"name": "search_train", "arguments": {"from": "广州", "to": "长沙", "date": "2026-06-22"}}]}
+{"id": "fc-0028", "calls": [{"name": "translate", "arguments": {"text": "今天天气真好", "target": "英语"}}]}
+{"id": "fc-0029", "calls": [{"name": "set_alarm", "arguments": {"time": "07:30", "label": "起床"}}]}
+{"id": "fc-0030", "calls": [{"name": "convert_currency", "arguments": {"amount": 100, "from": "USD", "to": "CNY"}}]}
+{"id": "fc-0031", "calls": [{"name": "navigate", "arguments": {"destination": "首都机场", "mode": "驾车"}}]}
+{"id": "fc-0032", "calls": [{"name": "lookup_word", "arguments": {"word": "serendipity"}}]}
+{"id": "fc-0033", "calls": [{"name": "get_news", "arguments": {"topic": "人工智能", "count": 3}}]}
