@@ -132,7 +132,7 @@
 {"id": "fc-0132", "calls": [{"name": "get_news", "arguments": {}}]}
 {"id": "fc-0133", "calls": [{"name": "set_alarm", "arguments": {}}]}
 {"id": "fc-0134", "calls": [{"name": "calculator", "arguments": {}}]}
-{"id": "fc-0135", "calls": [{"name": "convert_currency", "arguments": {}}]}
+{"id": "fc-0135", "calls": [{"name": "control_device", "arguments": {}}]}
 {"id": "fc-0136", "calls": [{"name": "get_weather", "arguments": {}}]}
 {"id": "fc-0137", "calls": [{"name": "lookup_word", "arguments": {}}]}
 {"id": "fc-0138", "calls": [{"name": "play_music", "arguments": {}}]}
